@@ -1,0 +1,1 @@
+Trying to selectively Parse a Xml/Html-Dokument into a Datastructure with complex Types/ custom Types  
