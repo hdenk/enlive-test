@@ -1,6 +1,6 @@
 (ns enlive-test.template2.core
   (:use [net.cgrand.enlive-html
-         :only [deftemplate defsnippet content clone-for escaped
+         :only [deftemplate defsnippet content clone-for 
                 nth-of-type first-child do-> set-attr sniptest at emit*]]))
 
 (def dummy-context
@@ -46,7 +46,8 @@
 (deftemplate index "enlive_test/template2/example.html"
   [{:keys [title sections]} model]
   [:#title] (content title)
-  [:body]   (escaped (content (map #(model % link-model) sections)))) ; section-model takes 2 params
+  [:body]   (content (map #(model % link-model) sections))) ; section-model takes 2 params
 
 ; TODO find out: resulting HTML is escaped. but why ?
 (print (apply str (emit* (index dummy-context section-model))))
+
